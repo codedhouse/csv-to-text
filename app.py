@@ -1,10 +1,9 @@
-# a simple script that reformats csv data and saves the results in a txt file
-import csv
+# a simple script that reformats 1 column of csv data and saves the results in a txt file
+results = open('results.txt', 'w')
 
-data_file = open ('example_data.csv')
-data_reader = csv.reader(data_file)
+with open('example_data.csv', 'r') as datafile:
+  for line_num, line in enumerate(datafile, 0):
+    line = line.replace(' ', '')
+    results.write(f'row #{line_num} {line}')
 
-for row in data_reader:
-  rowStr = str(row)
-  rowStr = rowStr.replace(' ', '')
-  print('row #' + str(data_reader.line_num) + ' ' + rowStr)
+results.close()
