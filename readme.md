@@ -1,0 +1,1 @@
+A simple script that reformats a list from a csv file & outputs the result in a txt file.
